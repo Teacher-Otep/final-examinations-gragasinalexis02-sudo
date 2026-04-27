@@ -1,6 +1,6 @@
 <?php
 // includes/insert.php - Insert student record
-require_once __DIR__ . 'includes/db.php';
+require_once __DIR__ . '/db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'] ?? '';

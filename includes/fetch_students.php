@@ -1,5 +1,4 @@
 <?php
-// includes/fetch_students.php - Fetch all students
 require_once __DIR__ . '/db.php';
 
 try {

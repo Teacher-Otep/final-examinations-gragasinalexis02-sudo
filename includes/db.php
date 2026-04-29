@@ -1,10 +1,10 @@
 <?php
-// includes/db.php - Database connection file
+
 $host = '127.0.0.1'; 
-$db   = 'dbstudents';  // Schema created as per Task 6a
+$db   = 'dbstudents';  a
 $user = 'root';        
 $pass = '';            
-$port = '3306';        // Change to 3308 if needed
+$port = '3306';        
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;port=$port;dbname=$db;charset=$charset";

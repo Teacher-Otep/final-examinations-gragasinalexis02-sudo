@@ -1,5 +1,4 @@
 <?php
-// includes/get_student.php - Get single student
 require_once __DIR__ . '/db.php';
 
 $id = $_GET['id'] ?? 0;

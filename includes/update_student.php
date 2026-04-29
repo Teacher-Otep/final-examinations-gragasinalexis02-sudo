@@ -2,6 +2,7 @@
 require_once __DIR__ . '/db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $id = $_POST['id'] ?? 0;
     $name = $_POST['name'] ?? '';
     $surname = $_POST['surname'] ?? '';
     $middlename = $_POST['middlename'] ?? '';
@@ -9,23 +10,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $contact = $_POST['contact'] ?? '';
 
     try {
-        $sql = "INSERT INTO students (name, surname, middlename, address, contact_number) 
-                VALUES (:name, :surname, :middlename, :address, :contact)";
+        $sql = "UPDATE students SET name=:name, surname=:surname, middlename=:middlename, 
+                address=:address, contact_number=:contact WHERE id=:id";
         
         $stmt = $pdo->prepare($sql);
         $stmt->execute([
+            ':id'         => $id,
             ':name'       => $name,
             ':surname'    => $surname,
             ':middlename' => $middlename,
             ':address'    => $address,
             ':contact'    => $contact
         ]);
-
-        header("Location: ../public/index.php?status=success");
-        exit();
         
+        echo json_encode(['success' => true]);
     } catch (PDOException $e) {
-        echo "Database Error: " . $e->getMessage();
+        echo json_encode(['success' => false, 'message' => $e->getMessage()]);
     }
 }
 ?>

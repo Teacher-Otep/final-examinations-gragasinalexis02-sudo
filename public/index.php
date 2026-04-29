@@ -8,7 +8,7 @@
 </head>
 <body>
     <nav class="navbar">
-        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj48Y2lyY2xlIGN4PSIxMDAiIGN5PSIxMDAiIHI9IjkwIiBmaWxsPSIjNjY3ZWVhIi8+PHRleHQgeD0iMTAwIiB5PSIxMjAiIGZvbnQtc2l6ZT0iNjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBmb250LWZhbWlseT0iQXJpYWwiPk5IPC90ZXh0Pjwvc3ZnPg==" id="logo" alt="NorthHub">
+        <img src="../images/northhub.svg" id="logo"></img>
         <button class="navbarbuttons" onclick="showSection('create')">Create</button>
         <button class="navbarbuttons" onclick="showSection('read')">Read</button>
         <button class="navbarbuttons" onclick="showSection('update')">Update</button>
@@ -21,7 +21,7 @@
     </section>
     
     <section id="create" class="content">
-        <h1 class="contenttitle">Insert New Sfghtudent</h1>
+        <h1 class="contenttitle">Insert New Student</h1>
         <form id="createForm" action="../includes/insert.php" method="POST">
             <label for="surname" class="label">Surname</label>
             <input type="text" name="surname" id="surname" class="field" required><br/>

@@ -73,7 +73,7 @@
         
         // Read functionality - fetch and display students
         function loadReadData() {
-            fetch('includes/fetch_students.php')
+            fetch('../includes/fetch_students.php')
                 .then(response => response.json())
                 .then(data => {
                     const container = document.getElementById('readContent');
@@ -104,7 +104,7 @@
         
         // Update functionality
         function loadUpdateData() {
-            fetch('includes/fetch_students.php')
+            fetch('../includes/fetch_students.php')
                 .then(response => response.json())
                 .then(data => {
                     const container = document.getElementById('updateContent');
@@ -135,7 +135,7 @@
         
         function editStudent(id) {
             // Fetch student details
-            fetch(`includes/get_student.php?id=${id}`)
+            fetch(`../includes/get_student.php?id=${id}`)
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {
@@ -166,7 +166,7 @@
             const address = document.getElementById(`edit-address-${id}`).value;
             const contact = document.getElementById(`edit-contact-${id}`).value;
             
-            fetch('includes/update_student.php', {
+            fetch('../includes/update_student.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
@@ -186,7 +186,7 @@
         
         // Delete functionality
         function loadDeleteData() {
-            fetch('includes/fetch_students.php')
+            fetch('../includes/fetch_students.php')
                 .then(response => response.json())
                 .then(data => {
                     const container = document.getElementById('deleteContent');
@@ -214,7 +214,7 @@
         
         function deleteStudent(id) {
             if (confirm('Are you sure you want to delete this student? This action cannot be undone.')) {
-                fetch('includes/delete_student.php', {
+                fetch('../includes/delete_student.php', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded',
